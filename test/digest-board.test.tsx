@@ -1,4 +1,5 @@
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { createApp } from '../src/app.js';
@@ -8,7 +9,7 @@ describe('digest links on the status board', () => {
   let runsDir: string;
 
   beforeEach(() => {
-    runsDir = mkdtempSync('/tmp/opencode/rig-board-test-');
+    runsDir = mkdtempSync(join(tmpdir(), 'rig-board-test-'));
   });
 
   afterEach(() => {
