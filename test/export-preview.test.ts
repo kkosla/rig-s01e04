@@ -1,6 +1,7 @@
 import { execFile } from 'node:child_process';
 import { createServer, type Server } from 'node:http';
 import { mkdtemp, readFile, readdir, rm, stat, symlink, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { promisify } from 'node:util';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
@@ -19,7 +20,7 @@ describe('preview export', () => {
   let requested: string | undefined;
 
   beforeEach(async () => {
-    directory = await mkdtemp('/tmp/opencode/rig-export-test-');
+    directory = await mkdtemp(join(tmpdir(), 'rig-export-test-'));
     status = 200;
     contentType = 'text/html; charset=UTF-8';
     body = sample;
