@@ -1,4 +1,5 @@
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { Hono } from 'hono';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
@@ -15,7 +16,7 @@ describe('digest JSON route', () => {
   let app: Hono;
 
   beforeEach(() => {
-    runsDir = mkdtempSync('/tmp/opencode/rig-json-test-');
+    runsDir = mkdtempSync(join(tmpdir(), 'rig-json-test-'));
     app = new Hono();
     registerDigestJson(app, {
       adapter: 'shim', installed: '2026-10-29T14:06:00+01:00',
