@@ -1,6 +1,6 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
 ---
@@ -77,3 +77,13 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+- Section 1 — Run log reader: https://github.com/kkosla/rig-s01e04/issues/1
+- Section 2a — Page: https://github.com/kkosla/rig-s01e04/issues/2
+- Section 2b — JSON: https://github.com/kkosla/rig-s01e04/issues/3
+- Section 2c — Board link: https://github.com/kkosla/rig-s01e04/issues/4
+- Section 2d — Route tests: https://github.com/kkosla/rig-s01e04/issues/5
+- Section 3 — Preview for review: https://github.com/kkosla/rig-s01e04/issues/6
+- Section 4 — Clean up: https://github.com/kkosla/rig-s01e04/issues/7
