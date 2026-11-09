@@ -1,4 +1,5 @@
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { createApp } from '../src/app.js';
@@ -28,7 +29,7 @@ describe('digest routes', () => {
   let config: RigConfig;
 
   beforeEach(() => {
-    runsDir = mkdtempSync('/tmp/opencode/rig-digest-routes-');
+    runsDir = mkdtempSync(join(tmpdir(), 'rig-digest-routes-'));
     config = { adapter: 'shim', installed: at(0), beatEverySeconds: 60, runsDir };
     vi.stubEnv('LANE_ID', 'digest-test-lane');
     vi.stubEnv('LANE_MARKER', 'DIGEST-TEST-MARKER');
