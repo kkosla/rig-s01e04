@@ -48,8 +48,10 @@ mv -f /tmp/opencode/rig-s01e04-public/.digest-next.html /tmp/opencode/rig-s01e04
 The public root must already exist and belong only to this preview. Stage and rename on
 the same filesystem so readers never receive a partial file. For a remote static host,
 use its equivalent overwrite operation, not a new URL. Verify the actual HTTPS response
-and caching behavior, then send the reviewer the link and the plan's issues. **Issue #6
-remains open until that link has actually been sent**, not merely exported locally.
+and caching behavior, then send the reviewer the link and the plan's issues. Record the
+public URL on the review issue, not the HTML or marker. **Issue #6 remains open until the
+reviewer explicitly confirms seeing the preview**, not merely until the link is sent.
+Keep the preview intact while waiting; issue #7 stays blocked on that confirmation.
 
 ## Remove the marker after review
 

@@ -24,6 +24,26 @@ in a shell this agent can run.
 
 6. Record every issue URL from gh's output (not from memory) and reply with the list.
 
+## Approved issue shape
+
+The human approved these fields for this repo during the morning-digest handover:
+
+- Open with `Source: plan.md § <section>` and use the plan label (`plan:morning-digest`
+  for the first handover).
+- Include Scope, Done when, Blocked by, and Verification sections. Dependencies cite actual
+  issue numbers; completion conditions and verification commands must be checkable.
+- Close with the worker/model/effort and commit comment from `AGENTS.md`, only after the
+  completion condition holds. Record the actual worker model, not the intended model.
+
+## Work that waits outside the repo
+
+Sending a preview and finishing its review are different events, even when a plan calls the
+preview done once sent. Make the review wait explicit in the issue's completion condition:
+keep it open until the reviewer confirms seeing the preview, and make cleanup depend on that
+confirmation. Record the public preview URL on the issue, never the HTML or lane marker.
+While waiting, keep the preview intact and schedule a later check rather than closing the
+issue or removing its marker. Obtain separate human approval before the marker-free overwrite.
+
 Closing one, with the closing comment from AGENTS.md:
 
 ```sh
