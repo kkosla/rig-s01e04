@@ -1,4 +1,5 @@
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { Hono } from 'hono';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
@@ -14,7 +15,7 @@ describe('digest page registration', () => {
   let app: Hono;
 
   beforeEach(() => {
-    runsDir = mkdtempSync('/tmp/opencode/rig-page-test-');
+    runsDir = mkdtempSync(join(tmpdir(), 'rig-page-test-'));
     vi.stubEnv('LANE_ID', 'test-lane');
     vi.stubEnv('LANE_MARKER', 'TEST-MARKER');
     app = new Hono();
