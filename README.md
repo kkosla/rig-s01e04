@@ -10,3 +10,5 @@ pnpm dev               # http://localhost:8787
 ```
 
 Working on it with an agent: start at [AGENTS.md](AGENTS.md).
+
+Exporting the running digest for review: [preview workflow](docs/preview.md).

@@ -8,6 +8,6 @@ const config = loadConfig();
 const port = Number(process.env.PORT ?? 8787);
 
 startBeating(lane().id, config.beatEverySeconds);
-serve({ fetch: createApp(config).fetch, port }, () => {
-  console.log(`rig · ${lane().id} · http://localhost:${port}`);
+serve({ fetch: createApp(config).fetch, port, hostname: '127.0.0.1' }, () => {
+  console.log(`rig · ${lane().id} · http://127.0.0.1:${port}`);
 });
